@@ -415,7 +415,7 @@ body {
     min-width: 350px;
     max-width: 450px;
     height: 100%; /* Full height of container */
-    padding: 1.5rem;
+    padding: 3.5rem 1.5rem 1.5rem 1.5rem; /* Increased top padding to avoid close button overlap */
     overflow-y: auto; /* Scrollable content */
     background: var(--card-bg);
     border-left: 1px solid var(--border-color);
