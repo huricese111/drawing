@@ -181,26 +181,36 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Comment System (Utterances) ---
     function loadComments(item) {
         const container = elements.commentsSection;
-        container.innerHTML = ''; // Clear existing comments
+        container.innerHTML = '<div class="loading-comments">Loading comments...</div>'; // Visual feedback
 
-        const script = document.createElement('script');
-        script.src = 'https://utteranc.es/client.js';
-        script.setAttribute('repo', 'huricese111/drawing'); // Your GitHub Repo
-        script.setAttribute('issue-term', item.id); // Map comments to the item ID
-        script.setAttribute('theme', 'github-dark');
-        script.setAttribute('crossorigin', 'anonymous');
-        script.async = true;
+        // Use setTimeout to allow the UI to render the "Loading..." text first
+        // and to ensure the container is visible (if called after removing 'hidden' class)
+        setTimeout(() => {
+            container.innerHTML = ''; // Clear loading text
+            
+            const script = document.createElement('script');
+            script.src = 'https://utteranc.es/client.js';
+            script.setAttribute('repo', 'huricese111/drawing'); // Your GitHub Repo
+            script.setAttribute('issue-term', item.id); // Map comments to the item ID
+            script.setAttribute('theme', 'github-dark');
+            script.setAttribute('crossorigin', 'anonymous');
+            script.async = true;
 
-        container.appendChild(script);
+            container.appendChild(script);
+        }, 100);
     }
 
     // --- Lightbox Functions ---
     function openLightbox(index) {
         state.lightboxIndex = index;
         state.subImageIndex = 0; // Reset sub-index when opening new item
-        updateLightboxContent();
+        
+        // 1. Show lightbox first so elements are visible in DOM
         elements.lightbox.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
+
+        // 2. Then update content and load comments
+        updateLightboxContent();
     }
 
     function closeLightbox() {
