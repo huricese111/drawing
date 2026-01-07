@@ -170,10 +170,26 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `).join('');
 
-        // Add click events for lightbox
         elements.grid.querySelectorAll('.gallery-item').forEach(item => {
+            const index = parseInt(item.dataset.index);
+            const wrapper = item.querySelector('.image-wrapper');
+            const img = item.querySelector('img');
+
+            if (wrapper && img) {
+                const onLoad = () => {
+                    wrapper.classList.add('loaded');
+                    img.classList.add('is-loaded');
+                };
+
+                if (img.complete && img.naturalWidth > 0) {
+                    onLoad();
+                } else {
+                    img.addEventListener('load', onLoad, { once: true });
+                }
+            }
+
             item.addEventListener('click', () => {
-                openLightbox(parseInt(item.dataset.index));
+                openLightbox(index);
             });
         });
     }
@@ -260,8 +276,22 @@ document.addEventListener("DOMContentLoaded", () => {
             currentSrc = item.images[state.subImageIndex];
         }
 
+        elements.lightboxImg.classList.remove('is-loaded');
         elements.lightboxImg.src = currentSrc;
         elements.lightboxImg.alt = item.title;
+
+        const handleLightboxLoad = () => {
+            elements.lightboxImg.classList.add('is-loaded');
+        };
+
+        if (elements.lightboxImg.complete && elements.lightboxImg.naturalWidth > 0) {
+            handleLightboxLoad();
+        } else {
+            elements.lightboxImg.addEventListener('load', function onLoad() {
+                elements.lightboxImg.removeEventListener('load', onLoad);
+                handleLightboxLoad();
+            });
+        }
         elements.lightboxCategory.textContent = item.category;
         elements.lightboxDate.textContent = formatDate(item.date);
         elements.lightboxTitle.textContent = item.title;
