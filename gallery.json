@@ -2,40 +2,30 @@
   "title": "Drawing Gallery",
   "items": [
     {
-      "id": "mermaid-01",
+      "id": "mermaid-collection",
       "title": "Mermaid in the Depths",
       "category": "Mermaid",
       "date": "2025-12-31",
       "src": "assets/mermaid/20251231_1449_海洋中的亚洲女性_remix_01kdsjm5fbekbawbfchp1vbpk3.png",
       "thumb": "assets/mermaid/20251231_1449_海洋中的亚洲女性_remix_01kdsjm5fbekbawbfchp1vbpk3.png",
-      "article": "<h3>The Concept</h3><p>This piece explores the ethereal beauty of a mermaid submerged in the deep azure waters. The focus was on capturing the interaction between light and water, creating a dreamlike atmosphere that surrounds the subject.</p><h3>Technique</h3><p>Using digital painting techniques, I layered multiple translucent washes to simulate the density of water. The scales were meticulously detailed to reflect the scattered light from the surface, adding a sense of realism to the fantasy creature.</p><h3>Inspiration</h3><p>Inspired by classical mythology and modern fantasy art, this illustration aims to portray the mermaid not just as a creature of beauty, but as a powerful entity at one with her environment.</p>"
+      "images": [
+        "assets/mermaid/20251231_1449_海洋中的亚洲女性_remix_01kdsjm5fbekbawbfchp1vbpk3.png",
+        "assets/mermaid/20251231_1449_海洋中的亚洲女性_remix_01kdsjm5fdfsasyh0qyxf5rq18.png"
+      ],
+      "article": "<h3>The Concept</h3><p>This collection explores the ethereal beauty of mermaids submerged in deep azure waters. The focus was on capturing the interaction between light and water, creating a dreamlike atmosphere.</p><h3>Technique & Variation</h3><p>Using digital painting techniques, I layered multiple translucent washes to simulate the density of water. The series presents two variations: one focusing on the interaction with surface light, and another emphasizing the serenity and calmness of the underwater world with a softer palette.</p><h3>Inspiration</h3><p>Inspired by classical mythology and modern fantasy art, these illustrations aim to portray the mermaid not just as a creature of beauty, but as a powerful entity at one with her environment.</p>"
     },
     {
-      "id": "mermaid-02",
-      "title": "Serenity of the Sea",
-      "category": "Mermaid",
-      "date": "2025-12-31",
-      "src": "assets/mermaid/20251231_1449_海洋中的亚洲女性_remix_01kdsjm5fdfsasyh0qyxf5rq18.png",
-      "thumb": "assets/mermaid/20251231_1449_海洋中的亚洲女性_remix_01kdsjm5fdfsasyh0qyxf5rq18.png",
-      "article": "<h3>The Composition</h3><p>In this variation, the composition focuses on the serenity and calmness of the underwater world. The color palette shifts towards softer blues and greens, emphasizing peace and solitude.</p><h3>Details</h3><p>Special attention was given to the flow of hair and fabric-like fins, mimicking the gentle currents of the deep ocean. The lighting is softer, diffusing through the water to create a halo effect around the figure.</p>"
-    },
-    {
-      "id": "warrior-01",
+      "id": "warrior-collection",
       "title": "Guardian of the Abyss",
-      "category": "Warrior",
+      "category": "Mermaid",
       "date": "2025-12-31",
       "src": "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37wfbnapng9mqt6b0tw.png",
       "thumb": "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37wfbnapng9mqt6b0tw.png",
-      "article": "<h3>Character Design</h3><p>This character represents a warrior of the deep sea, clad in armor forged from coral and ancient metals. The design blends organic shapes with rigid protective structures, suggesting a civilization that has adapted perfectly to the high-pressure environment.</p><h3>Storytelling</h3><p>The stance is defensive yet commanding, hinting at a narrative of protection and vigilance. The dark background contrasts sharply with the highlights on the armor, drawing the viewer's eye to the intricate details of the weaponry and gear.</p>"
-    },
-    {
-      "id": "warrior-02",
-      "title": "Abyssal Sentinel",
-      "category": "Warrior",
-      "date": "2025-12-31",
-      "src": "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37xemmvbsd7jktwqcwn.png",
-      "thumb": "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37xemmvbsd7jktwqcwn.png",
-      "article": "<h3>Visual Style</h3><p>A more dynamic pose characterizes this piece, capturing the warrior in motion. The fluid lines of the water contrast with the sharp, angular design of the spear and armor.</p><h3>Color & Light</h3><p>I experimented with bioluminescent lighting effects in this piece, adding glowing accents to the armor and eyes. This not only serves as a light source in the dark composition but also adds an element of magic and advanced technology to the character's lore.</p>"
+      "images": [
+        "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37wfbnapng9mqt6b0tw.png",
+        "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37xemmvbsd7jktwqcwn.png"
+      ],
+      "article": "<h3>Character Design</h3><p>This series represents warriors of the deep sea, clad in armor forged from coral and ancient metals. The design blends organic shapes with rigid protective structures, suggesting a civilization adapted to high-pressure environments.</p><h3>Storytelling & Visuals</h3><p>The collection showcases both defensive stances and dynamic motion. One piece focuses on a commanding, vigilant presence, while the other captures the warrior in action. Bioluminescent lighting effects were added to the armor to suggest both a natural light source and magical properties.</p>"
     }
   ]
 }

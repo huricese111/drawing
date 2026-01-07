@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
         filter: 'all',
         sort: 'newest',
         searchQuery: '',
-        lightboxIndex: 0
+        lightboxIndex: 0,
+        subImageIndex: 0 // Track current image within a collection
     };
 
     // DOM Elements
@@ -28,7 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
         closeBtn: document.getElementById("closeLightbox"),
         prevBtn: document.getElementById("prevBtn"),
         nextBtn: document.getElementById("nextBtn"),
-        overlay: document.querySelector(".lightbox-overlay")
+        overlay: document.querySelector(".lightbox-overlay"),
+        
+        // Lightbox Sub-navigation (Inner Gallery)
+        prevSubBtn: document.getElementById("prevSubBtn"),
+        nextSubBtn: document.getElementById("nextSubBtn"),
+        subIndicators: document.getElementById("subImageIndicators")
     };
 
     // Set current year
@@ -65,11 +71,21 @@ document.addEventListener("DOMContentLoaded", () => {
             processData();
         });
 
-        // Lightbox controls
+        // Lightbox controls (Main navigation)
         elements.closeBtn.addEventListener('click', closeLightbox);
         elements.overlay.addEventListener('click', closeLightbox);
         elements.prevBtn.addEventListener('click', showPrevImage);
         elements.nextBtn.addEventListener('click', showNextImage);
+        
+        // Lightbox controls (Sub navigation)
+        elements.prevSubBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent closing lightbox if clicked on button
+            showPrevSubImage();
+        });
+        elements.nextSubBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showNextSubImage();
+        });
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
@@ -78,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.key === 'Escape') closeLightbox();
             if (e.key === 'ArrowLeft') showPrevImage();
             if (e.key === 'ArrowRight') showNextImage();
+            // Up/Down for sub-images? Or maybe just rely on clicks for now to avoid confusion
         });
     }
 
@@ -142,6 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="gallery-item" data-index="${index}">
                 <div class="image-wrapper">
                     <img src="${item.thumb || item.src}" alt="${item.title}" loading="lazy">
+                    ${item.images && item.images.length > 1 ? '<div class="multi-icon">❐</div>' : ''}
                 </div>
                 <div class="item-info">
                     <span class="item-category">${item.category}</span>
@@ -162,6 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Lightbox Functions
     function openLightbox(index) {
         state.lightboxIndex = index;
+        state.subImageIndex = 0; // Reset sub-index
         updateLightboxContent();
         elements.lightbox.classList.remove('hidden');
         document.body.style.overflow = 'hidden'; // Prevent scrolling
@@ -174,18 +193,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function showNextImage() {
         state.lightboxIndex = (state.lightboxIndex + 1) % state.visibleItems.length;
+        state.subImageIndex = 0; // Reset sub-index for new item
         updateLightboxContent();
     }
 
     function showPrevImage() {
         state.lightboxIndex = (state.lightboxIndex - 1 + state.visibleItems.length) % state.visibleItems.length;
+        state.subImageIndex = 0; // Reset sub-index for new item
         updateLightboxContent();
+    }
+
+    function showNextSubImage() {
+        const item = state.visibleItems[state.lightboxIndex];
+        if (item.images && item.images.length > 1) {
+            state.subImageIndex = (state.subImageIndex + 1) % item.images.length;
+            updateLightboxContent();
+        }
+    }
+
+    function showPrevSubImage() {
+        const item = state.visibleItems[state.lightboxIndex];
+        if (item.images && item.images.length > 1) {
+            state.subImageIndex = (state.subImageIndex - 1 + item.images.length) % item.images.length;
+            updateLightboxContent();
+        }
     }
 
     function updateLightboxContent() {
         const item = state.visibleItems[state.lightboxIndex];
         
-        elements.lightboxImg.src = item.src;
+        // Determine which image to show
+        let currentSrc = item.src;
+        let hasMultipleImages = false;
+
+        if (item.images && item.images.length > 1) {
+            hasMultipleImages = true;
+            // Ensure index is valid
+            if (state.subImageIndex >= item.images.length) state.subImageIndex = 0;
+            currentSrc = item.images[state.subImageIndex];
+        }
+
+        elements.lightboxImg.src = currentSrc;
         elements.lightboxImg.alt = item.title;
         elements.lightboxCategory.textContent = item.category;
         elements.lightboxDate.textContent = formatDate(item.date);
@@ -196,6 +244,32 @@ document.addEventListener("DOMContentLoaded", () => {
             elements.lightboxDescription.innerHTML = item.article;
         } else {
             elements.lightboxDescription.innerHTML = '<p>No description available for this artwork.</p>';
+        }
+
+        // Handle Sub-navigation UI
+        if (hasMultipleImages) {
+            elements.prevSubBtn.classList.remove('hidden');
+            elements.nextSubBtn.classList.remove('hidden');
+            elements.subIndicators.classList.remove('hidden');
+            
+            // Render indicators (dots)
+            elements.subIndicators.innerHTML = item.images.map((_, idx) => `
+                <span class="indicator ${idx === state.subImageIndex ? 'active' : ''}" data-index="${idx}"></span>
+            `).join('');
+            
+            // Add click events to indicators
+            elements.subIndicators.querySelectorAll('.indicator').forEach(ind => {
+                ind.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    state.subImageIndex = parseInt(ind.dataset.index);
+                    updateLightboxContent();
+                });
+            });
+
+        } else {
+            elements.prevSubBtn.classList.add('hidden');
+            elements.nextSubBtn.classList.add('hidden');
+            elements.subIndicators.classList.add('hidden');
         }
     }
 

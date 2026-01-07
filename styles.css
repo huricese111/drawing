@@ -195,6 +195,20 @@ body {
     transform: scale(1.05);
 }
 
+/* Multi-image Icon */
+.multi-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .item-info {
     padding: 1.2rem;
     flex: 1;
@@ -299,6 +313,7 @@ body {
     color: var(--text-primary);
 }
 
+/* Main Navigation Buttons */
 .nav-btn {
     position: absolute;
     top: 50%;
@@ -347,6 +362,64 @@ body {
     max-height: 100%;
     object-fit: contain;
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+/* Sub-Navigation (Inner Gallery) */
+.sub-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.sub-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.sub-nav-btn.prev { left: 20px; }
+.sub-nav-btn.next { right: 20px; }
+
+.sub-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .lightbox-details {
