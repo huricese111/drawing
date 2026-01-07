@@ -153,16 +153,14 @@ body {
     cursor: pointer;
 }
 
-/* Gallery Grid - Waterfall/Masonry Layout */
+/* Gallery Grid - Row Layout */
 .gallery-grid {
-    display: block; /* Disable CSS Grid */
-    column-count: 4; /* Default columns */
-    column-gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
-@media (max-width: 1200px) { .gallery-grid { column-count: 3; } }
-@media (max-width: 800px) { .gallery-grid { column-count: 2; } }
-@media (max-width: 500px) { .gallery-grid { column-count: 1; } }
+/* Remove Masonry media queries as grid handles responsiveness automatically */
 
 .gallery-item {
     background: var(--card-bg);
@@ -172,11 +170,10 @@ body {
     cursor: pointer;
     border: 1px solid var(--border-color);
     
-    /* Masonry required properties */
-    display: inline-block;
+    /* Standard block display for Grid */
+    display: block;
     width: 100%;
-    margin-bottom: 1.5rem;
-    break-inside: avoid;
+    /* margin-bottom removed as grid gap handles spacing */
 }
 
 .gallery-item:hover {
