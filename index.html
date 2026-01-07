@@ -11,6 +11,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css?v=8">
+    <script>
+        try {
+            const getCookie = (name) => {
+                try {
+                    const escaped = name.replace(/([.$?*|{}()[\]\\/+^])/g, "\\$1");
+                    const match = document.cookie.match(new RegExp("(?:^|; )" + escaped + "=([^;]*)"));
+                    return match ? decodeURIComponent(match[1]) : null;
+                } catch (e) {
+                    return null;
+                }
+            };
+
+            if (sessionStorage.getItem("ageGateVerified") === "1" || getCookie("ageGateVerified") === "1") {
+                document.documentElement.classList.add("age-gate-verified");
+            }
+        } catch (e) {}
+    </script>
 </head>
 <body>
     <div id="ageGate" class="age-gate">

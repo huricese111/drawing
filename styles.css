@@ -363,6 +363,10 @@ body {
     display: none !important;
 }
 
+html.age-gate-verified #ageGate {
+    display: none !important;
+}
+
 .age-gate {
     position: fixed;
     inset: 0;

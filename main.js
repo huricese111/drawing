@@ -57,6 +57,65 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        const storage = (() => {
+            try {
+                const testKey = "__ageGateTestKey";
+                window.sessionStorage.setItem(testKey, "1");
+                window.sessionStorage.removeItem(testKey);
+                return window.sessionStorage;
+            } catch (e) {
+                return null;
+            }
+        })();
+
+        const getSessionItem = (key) => {
+            try {
+                return storage ? storage.getItem(key) : null;
+            } catch (e) {
+                return null;
+            }
+        };
+
+        const setSessionItem = (key, value) => {
+            try {
+                if (!storage) return;
+                if (value === "" || value == null) storage.removeItem(key);
+                else storage.setItem(key, String(value));
+            } catch (e) {}
+        };
+
+        const getCookie = (name) => {
+            try {
+                const escaped = name.replace(/([.$?*|{}()[\]\\/+^])/g, "\\$1");
+                const match = document.cookie.match(new RegExp("(?:^|; )" + escaped + "=([^;]*)"));
+                return match ? decodeURIComponent(match[1]) : null;
+            } catch (e) {
+                return null;
+            }
+        };
+
+        const setSessionCookie = (name, value) => {
+            try {
+                if (value === "" || value == null) {
+                    document.cookie = `${encodeURIComponent(name)}=; Max-Age=0; path=/`;
+                } else {
+                    document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(String(value))}; path=/`;
+                }
+            } catch (e) {}
+        };
+
+        const AGE_GATE_VERIFIED_KEY = "ageGateVerified";
+        const AGE_GATE_MONTH_KEY = "ageGateBirthMonth";
+        const AGE_GATE_DAY_KEY = "ageGateBirthDay";
+        const AGE_GATE_YEAR_KEY = "ageGateBirthYear";
+        const AGE_GATE_DOB_KEY = "ageGateDob";
+
+        if (getSessionItem(AGE_GATE_VERIFIED_KEY) === "1" || getCookie(AGE_GATE_VERIFIED_KEY) === "1") {
+            elements.ageGate.classList.add("hidden");
+            init();
+            return;
+        }
+
         const months = [
             "January",
             "February",
@@ -92,6 +151,27 @@ document.addEventListener("DOMContentLoaded", () => {
             yearOptions.push(`<option value="${y}">${y}</option>`);
         }
         elements.birthYear.innerHTML = yearOptions.join("");
+
+        const savedMonth = getSessionItem(AGE_GATE_MONTH_KEY) || getCookie(AGE_GATE_MONTH_KEY);
+        const savedDay = getSessionItem(AGE_GATE_DAY_KEY) || getCookie(AGE_GATE_DAY_KEY);
+        const savedYear = getSessionItem(AGE_GATE_YEAR_KEY) || getCookie(AGE_GATE_YEAR_KEY);
+        if (savedMonth) elements.birthMonth.value = savedMonth;
+        if (savedDay) elements.birthDay.value = savedDay;
+        if (savedYear) elements.birthYear.value = savedYear;
+
+        const persistSelections = () => {
+            setSessionItem(AGE_GATE_MONTH_KEY, elements.birthMonth.value);
+            setSessionItem(AGE_GATE_DAY_KEY, elements.birthDay.value);
+            setSessionItem(AGE_GATE_YEAR_KEY, elements.birthYear.value);
+            setSessionCookie(AGE_GATE_MONTH_KEY, elements.birthMonth.value);
+            setSessionCookie(AGE_GATE_DAY_KEY, elements.birthDay.value);
+            setSessionCookie(AGE_GATE_YEAR_KEY, elements.birthYear.value);
+            elements.ageGateError.classList.add("hidden");
+        };
+
+        elements.birthMonth.addEventListener("change", persistSelections);
+        elements.birthDay.addEventListener("change", persistSelections);
+        elements.birthYear.addEventListener("change", persistSelections);
 
         elements.ageGateEnter.addEventListener("click", () => {
             const monthValue = parseInt(elements.birthMonth.value, 10);
@@ -132,8 +212,28 @@ document.addEventListener("DOMContentLoaded", () => {
             if (age >= 18) {
                 elements.ageGateError.classList.add("hidden");
                 elements.ageGate.classList.add("hidden");
+                setSessionItem(AGE_GATE_VERIFIED_KEY, "1");
+                setSessionItem(AGE_GATE_DOB_KEY, `${yearValue}-${String(monthValue).padStart(2, "0")}-${String(dayValue).padStart(2, "0")}`);
+                setSessionItem(AGE_GATE_MONTH_KEY, monthValue);
+                setSessionItem(AGE_GATE_DAY_KEY, dayValue);
+                setSessionItem(AGE_GATE_YEAR_KEY, yearValue);
+                setSessionCookie(AGE_GATE_VERIFIED_KEY, "1");
+                setSessionCookie(AGE_GATE_DOB_KEY, `${yearValue}-${String(monthValue).padStart(2, "0")}-${String(dayValue).padStart(2, "0")}`);
+                setSessionCookie(AGE_GATE_MONTH_KEY, monthValue);
+                setSessionCookie(AGE_GATE_DAY_KEY, dayValue);
+                setSessionCookie(AGE_GATE_YEAR_KEY, yearValue);
                 init();
             } else {
+                setSessionItem(AGE_GATE_VERIFIED_KEY, "");
+                setSessionItem(AGE_GATE_DOB_KEY, "");
+                setSessionItem(AGE_GATE_MONTH_KEY, "");
+                setSessionItem(AGE_GATE_DAY_KEY, "");
+                setSessionItem(AGE_GATE_YEAR_KEY, "");
+                setSessionCookie(AGE_GATE_VERIFIED_KEY, "");
+                setSessionCookie(AGE_GATE_DOB_KEY, "");
+                setSessionCookie(AGE_GATE_MONTH_KEY, "");
+                setSessionCookie(AGE_GATE_DAY_KEY, "");
+                setSessionCookie(AGE_GATE_YEAR_KEY, "");
                 window.location.href = "https://www.google.com/";
             }
         });
