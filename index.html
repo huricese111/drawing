@@ -12,6 +12,26 @@
     <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
+    <div id="ageGate" class="age-gate">
+        <div class="age-gate-card">
+            <h1>Age Verification</h1>
+            <p class="age-gate-text">This gallery may contain adult-oriented artwork. You must be at least 18 years old to continue.</p>
+            <div class="age-gate-field">
+                <label for="birthMonth">Date of birth</label>
+                <div class="age-gate-select-row">
+                    <select id="birthMonth"></select>
+                    <select id="birthDay"></select>
+                    <select id="birthYear"></select>
+                </div>
+            </div>
+            <div id="ageGateError" class="age-gate-error hidden">Please enter a valid date of birth.</div>
+            <div class="age-gate-actions">
+                <button id="ageGateEnter" class="age-gate-btn primary">Enter</button>
+                <button id="ageGateExit" class="age-gate-btn secondary">Leave</button>
+            </div>
+        </div>
+    </div>
+
     <header class="site-header">
         <div class="logo-container">
             <a href="index.html" class="logo-link">

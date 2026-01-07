@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
         subImageIndex: 0 // Track current image within a collection
     };
 
-    // DOM Elements
     const elements = {
         grid: document.getElementById("galleryGrid"),
         filters: document.getElementById("categoryFilters"),
@@ -35,14 +34,126 @@ document.addEventListener("DOMContentLoaded", () => {
         // Lightbox Sub-navigation (Inner Gallery)
         prevSubBtn: document.getElementById("prevSubBtn"),
         nextSubBtn: document.getElementById("nextSubBtn"),
-        subIndicators: document.getElementById("subImageIndicators")
+        subIndicators: document.getElementById("subImageIndicators"),
+        ageGate: document.getElementById("ageGate"),
+        birthMonth: document.getElementById("birthMonth"),
+        birthDay: document.getElementById("birthDay"),
+        birthYear: document.getElementById("birthYear"),
+        ageGateError: document.getElementById("ageGateError"),
+        ageGateEnter: document.getElementById("ageGateEnter"),
+        ageGateExit: document.getElementById("ageGateExit")
     };
 
     // Set current year
-    elements.year.textContent = new Date().getFullYear();
+    if (elements.year) {
+        elements.year.textContent = new Date().getFullYear();
+    }
 
-    // Initialize
-    init();
+    setupAgeGate();
+
+    function setupAgeGate() {
+        if (!elements.ageGate || !elements.birthMonth || !elements.birthDay || !elements.birthYear || !elements.ageGateEnter || !elements.ageGateExit || !elements.ageGateError) {
+            init();
+            return;
+        }
+
+        const months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ];
+
+        elements.birthMonth.innerHTML = [
+            '<option value="">Month</option>',
+            ...months.map((name, index) => `<option value="${index + 1}">${name}</option>`)
+        ].join("");
+
+        const dayOptions = [];
+        dayOptions.push('<option value="">Day</option>');
+        for (let d = 1; d <= 31; d++) {
+            dayOptions.push(`<option value="${d}">${d}</option>`);
+        }
+        elements.birthDay.innerHTML = dayOptions.join("");
+
+        const yearOptions = [];
+        yearOptions.push('<option value="">Year</option>');
+        const currentYear = new Date().getFullYear();
+        const minYear = currentYear - 100;
+        for (let y = currentYear; y >= minYear; y--) {
+            yearOptions.push(`<option value="${y}">${y}</option>`);
+        }
+        elements.birthYear.innerHTML = yearOptions.join("");
+
+        elements.ageGateEnter.addEventListener("click", () => {
+            const monthValue = parseInt(elements.birthMonth.value, 10);
+            const dayValue = parseInt(elements.birthDay.value, 10);
+            const yearValue = parseInt(elements.birthYear.value, 10);
+
+            if (!monthValue || !dayValue || !yearValue) {
+                elements.ageGateError.textContent = "Please select your full date of birth.";
+                elements.ageGateError.classList.remove("hidden");
+                return;
+            }
+
+            const birthDate = new Date(yearValue, monthValue - 1, dayValue);
+            if (Number.isNaN(birthDate.getTime())) {
+                elements.ageGateError.textContent = "Please select a valid date of birth.";
+                elements.ageGateError.classList.remove("hidden");
+                return;
+            }
+
+            if (
+                birthDate.getFullYear() !== yearValue ||
+                birthDate.getMonth() !== monthValue - 1 ||
+                birthDate.getDate() !== dayValue
+            ) {
+                elements.ageGateError.textContent = "Please select a valid date of birth.";
+                elements.ageGateError.classList.remove("hidden");
+                return;
+            }
+
+            const today = new Date();
+            if (birthDate > today) {
+                elements.ageGateError.textContent = "Please select a valid date of birth.";
+                elements.ageGateError.classList.remove("hidden");
+                return;
+            }
+
+            const age = calculateAge(birthDate);
+            if (age >= 18) {
+                elements.ageGateError.classList.add("hidden");
+                elements.ageGate.classList.add("hidden");
+                init();
+            } else {
+                window.location.href = "https://www.google.com/";
+            }
+        });
+
+        elements.ageGateExit.addEventListener("click", () => {
+            window.location.href = "https://www.google.com/";
+        });
+    }
+
+    function calculateAge(birthDate) {
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDiff = today.getMonth() - birthDate.getMonth();
+
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+
+        return age;
+    }
 
     async function init() {
         try {
