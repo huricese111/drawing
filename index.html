@@ -14,8 +14,14 @@
 <body>
     <header class="site-header">
         <div class="logo-container">
-            <img src="assets/logo.svg" alt="MYTHOS Logo" class="site-logo">
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.svg" alt="MYTHOS Logo" class="site-logo">
+            </a>
         </div>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link nav-link-active">Gallery</a>
+            <a href="about.html" class="nav-link">About</a>
+        </nav>
         <div class="search-bar">
             <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             <input type="text" id="searchInput" placeholder="Search gallery...">
@@ -47,7 +53,7 @@
     </main>
 
     <footer class="site-footer">
-        <p>&copy; <span id="year"></span> MYTHOS. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> MYTHOS. All rights reserved. Some images are AI-assisted. See <a href="about.html">About</a>.</p>
     </footer>
 
     <!-- Lightbox Modal -->

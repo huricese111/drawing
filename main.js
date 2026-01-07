@@ -49,6 +49,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch('gallery.json');
             const jsonData = await response.json();
             state.data = jsonData.items;
+
+            try {
+                const params = new URLSearchParams(window.location.search);
+                const qParam = params.get('q') || '';
+                if (qParam && elements.searchInput) {
+                    elements.searchInput.value = qParam;
+                    state.searchQuery = qParam.toLowerCase();
+                }
+            } catch (e) {}
             
             setupEventListeners();
             renderFilters();

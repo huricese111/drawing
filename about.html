@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MYTHOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.svg" alt="MYTHOS Logo" class="site-logo">
+            </a>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Gallery</a>
+            <a href="about.html" class="nav-link nav-link-active">About</a>
+        </nav>
+        <div class="search-bar">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="searchInput" placeholder="Search gallery and press Enter...">
+        </div>
+    </header>
+
+    <main class="page-container">
+        <section class="about-hero">
+            <h1>About This Gallery</h1>
+            <p>MYTHOS is a personal digital art gallery exploring oceanic myths, warriors and mermaids through stylized illustration and cinematic compositions.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Use of AI-Generated Imagery</h2>
+            <p>Some of the artworks displayed in this gallery are fully or partially generated, enhanced or post-processed with the help of artificial intelligence tools. Other pieces are painted or edited by hand.</p>
+            <p>The intention of this site is to experiment with visual storytelling and style exploration, not to mislead viewers about the creative process. When AI tools are involved, they are used as part of an artistic workflow and not as a replacement for human authorship and curation.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Copyright and Responsibility</h2>
+            <p>The gallery is presented for personal, non-commercial display and portfolio purposes. The author does not claim that all visual elements are entirely original in a strict legal sense, especially where AI models or third-party training data may be involved.</p>
+            <p>If you believe that any content on this site violates your rights or applicable law, please contact the author via GitHub so that the material can be reviewed and, if necessary, removed.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Intended Use</h2>
+            <p>This site is not intended to depict real individuals, real-world events or official commercial products. Any resemblance to actual persons, organizations or brands is unintentional.</p>
+            <p>By browsing this gallery you acknowledge that a portion of the images may have been generated with or assisted by AI tools, and that the site is offered on an as-is, experimental basis.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> MYTHOS. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var yearEl = document.getElementById("year");
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+
+            var searchInput = document.getElementById("searchInput");
+            if (searchInput) {
+                searchInput.addEventListener("keydown", function (e) {
+                    if (e.key === "Enter") {
+                        var value = searchInput.value.trim();
+                        if (value) {
+                            window.location.href = "index.html?q=" + encodeURIComponent(value);
+                        } else {
+                            window.location.href = "index.html";
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
