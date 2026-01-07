@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         lightboxTitle: document.getElementById("lightboxTitle"),
         lightboxCategory: document.getElementById("lightboxCategory"),
         lightboxDate: document.getElementById("lightboxDate"),
-        lightboxDescription: document.getElementById("lightboxArticle"), // Updated ID
+        lightboxDescription: document.getElementById("lightboxDescription"), // Corrected ID to match HTML
         commentsSection: document.getElementById("commentsSection"), // Comments
         closeBtn: document.getElementById("closeLightbox"),
         prevBtn: document.getElementById("prevBtn"),
