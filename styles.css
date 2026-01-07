@@ -184,14 +184,14 @@ body {
 
 .image-wrapper {
     width: 100%;
-    /* aspect-ratio removed to allow natural height */
+    aspect-ratio: 4 / 5;
     overflow: hidden;
     position: relative;
 }
 
 .image-wrapper img {
     width: 100%;
-    height: auto; /* Allow natural height */
+    height: 100%;
     display: block;
     object-fit: cover;
     transition: transform 0.5s ease;
