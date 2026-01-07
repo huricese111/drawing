@@ -2,30 +2,162 @@
   "title": "MYTHOS Gallery",
   "items": [
     {
-      "id": "mermaid-collection",
-      "title": "Mermaid in the Depths",
+      "id": "ocean-warrior-1448",
+      "title": "Warrior of the Tidal Deep",
+      "category": "Mermaid",
+      "date": "2025-12-31",
+      "src": "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37te7atrhyaymyx6ca3.png",
+      "thumb": "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37te7atrhyaymyx6ca3.png",
+      "images": [
+        "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37te7atrhyaymyx6ca3.png",
+        "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37vetgasnv32saesa69.png",
+        "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37wfbnapng9mqt6b0tw.png",
+        "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37xemmvbsd7jktwqcwn.png"
+      ],
+      "article": "<h3>Concept</h3><p>This series imagines a warrior who patrols the darkest trenches of the ocean. Heavy armor shaped from coral, shells and ancient metals wraps around the figure, turning the character into a living fortress moving through the water.</p><h3>Visual Direction</h3><p>The different images explore variations in pose, camera angle and lighting. Some focus on the solemn stillness of a guardian on watch, while others capture motion and swirling currents around the armor. Bioluminescent accents were added to suggest both natural sea life and a faint magical power.</p><h3>Themes</h3><p>At its core, this work blends fantasy heroism with deep sea mystery, presenting the mermaid warrior as a protector of a world most humans will never see.</p>"
+    },
+    {
+      "id": "asian-mermaid-portrait-1449",
+      "title": "Serenity Beneath the Waves",
       "category": "Mermaid",
       "date": "2025-12-31",
       "src": "assets/mermaid/20251231_1449_海洋中的亚洲女性_remix_01kdsjm5fbekbawbfchp1vbpk3.png",
       "thumb": "assets/mermaid/20251231_1449_海洋中的亚洲女性_remix_01kdsjm5fbekbawbfchp1vbpk3.png",
       "images": [
         "assets/mermaid/20251231_1449_海洋中的亚洲女性_remix_01kdsjm5fbekbawbfchp1vbpk3.png",
-        "assets/mermaid/20251231_1449_海洋中的亚洲女性_remix_01kdsjm5fdfsasyh0qyxf5rq18.png"
+        "assets/mermaid/20251231_1449_海洋中的亚洲女性_remix_01kdsjm5fcfehbh88dtt1kxe1d.png",
+        "assets/mermaid/20251231_1449_海洋中的亚洲女性_remix_01kdsjm5fdfsasyh0qyxf5rq18.png",
+        "assets/mermaid/20251231_1449_海洋中的亚洲女性_remix_01kdsjm5feecp9qn34t9eacc9c.png"
       ],
-      "article": "<h3>The Concept</h3><p>This collection explores the ethereal beauty of mermaids submerged in deep azure waters. The focus was on capturing the interaction between light and water, creating a dreamlike atmosphere.</p><h3>Technique & Variation</h3><p>Using digital painting techniques, I layered multiple translucent washes to simulate the density of water. The series presents two variations: one focusing on the interaction with surface light, and another emphasizing the serenity and calmness of the underwater world with a softer palette.</p><h3>Inspiration</h3><p>Inspired by classical mythology and modern fantasy art, these illustrations aim to portray the mermaid not just as a creature of beauty, but as a powerful entity at one with her environment.</p>"
+      "article": "<h3>Concept</h3><p>This collection portrays a calm, introspective mermaid drifting through quiet currents. The character is framed like a portrait, allowing subtle facial expression and delicate details to carry most of the emotion.</p><h3>Color and Mood</h3><p>Soft blues and teal tones are contrasted with warm highlights on the skin and hair. Each variation slightly shifts the balance of light and shadow, testing how gentle changes in color grading can alter the mood from dreamy to quietly powerful.</p><h3>Character Focus</h3><p>Rather than emphasizing armor or weapons, this series centers on presence and personality. The mermaid becomes a symbol of resilience and grace, suspended between light from the surface and darkness from the deep.</p>"
     },
     {
-      "id": "warrior-collection",
-      "title": "Guardian of the Abyss",
+      "id": "reef-mermaid-1451",
+      "title": "Song of the Coral Reef",
       "category": "Mermaid",
       "date": "2025-12-31",
-      "src": "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37wfbnapng9mqt6b0tw.png",
-      "thumb": "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37wfbnapng9mqt6b0tw.png",
+      "src": "assets/mermaid/20251231_1451_海洋中的美人鱼_remix_01kdsjs9qkfj4rfb70f7mxdy95.png",
+      "thumb": "assets/mermaid/20251231_1451_海洋中的美人鱼_remix_01kdsjs9qkfj4rfb70f7mxdy95.png",
       "images": [
-        "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37wfbnapng9mqt6b0tw.png",
-        "assets/mermaid/20251231_1448_海洋中的战士_remix_01kdsjk37xemmvbsd7jktwqcwn.png"
+        "assets/mermaid/20251231_1451_海洋中的美人鱼_remix_01kdsjs9qkfj4rfb70f7mxdy95.png",
+        "assets/mermaid/20251231_1451_海洋中的美人鱼_remix_01kdsjs9qmfyp8hw23p2yt7v7s.png",
+        "assets/mermaid/20251231_1451_海洋中的美人鱼_remix_01kdsjs9qnfyzr4579adkz5krq.png",
+        "assets/mermaid/20251231_1451_海洋中的美人鱼_remix_01kdsjs9qpek3bnxhcwadkrrvn.png"
       ],
-      "article": "<h3>Character Design</h3><p>This series represents warriors of the deep sea, clad in armor forged from coral and ancient metals. The design blends organic shapes with rigid protective structures, suggesting a civilization adapted to high-pressure environments.</p><h3>Storytelling & Visuals</h3><p>The collection showcases both defensive stances and dynamic motion. One piece focuses on a commanding, vigilant presence, while the other captures the warrior in action. Bioluminescent lighting effects were added to the armor to suggest both a natural light source and magical properties.</p>"
+      "article": "<h3>Concept</h3><p>These images imagine a mermaid woven into the geometry of coral reefs. Flowing hair, fins and fabric echo the branching shapes of corals, creating a visual rhyme between character and environment.</p><h3>Lighting Experiments</h3><p>Each variation experiments with different underwater lighting setups, from sunbeams cutting through clear water to more diffuse, hazy illumination. The goal is to explore how light can guide the viewer&apos;s eye through complex compositions.</p><h3>Narrative</h3><p>There is no explicit story panel here, but the series suggests a guardian figure who is both part of the reef and its silent singer, echoing the idea that every reef has its own myth.</p>"
+    },
+    {
+      "id": "sea-goddess-1452",
+      "title": "Goddess of the Midnight Sea",
+      "category": "Mermaid",
+      "date": "2025-12-31",
+      "src": "assets/mermaid/20251231_1452_海洋背景女神_remix_01kdsjsrn3ec3bdp821bxhynj9.png",
+      "thumb": "assets/mermaid/20251231_1452_海洋背景女神_remix_01kdsjsrn3ec3bdp821bxhynj9.png",
+      "images": [
+        "assets/mermaid/20251231_1452_海洋背景女神_remix_01kdsjsrn3ec3bdp821bxhynj9.png",
+        "assets/mermaid/20251231_1452_海洋背景女神_remix_01kdsjsrn4emdbxkv459a4bgxy.png",
+        "assets/mermaid/20251231_1452_海洋背景女神_remix_01kdsjsrn6feg8dz335t3x5x86.png"
+      ],
+      "article": "<h3>Concept</h3><p>This collection elevates the mermaid into a divine, goddess-like presence. The compositions place her against vast ocean backdrops, emphasizing scale and a sense of celestial authority.</p><h3>Design Elements</h3><p>Flowing garments, halo-like shapes and dramatic backlighting are used to suggest divinity. The background shifts between different arrangements of waves, clouds and distant light sources, turning the sea itself into a kind of throne room.</p><h3>Intent</h3><p>The aim is to blend fantasy illustration with the feeling of a painted religious icon, but translated into an underwater world where the ocean replaces the sky.</p>"
+    },
+    {
+      "id": "deep-mermaid-1455",
+      "title": "Echoes of the Siren",
+      "category": "Mermaid",
+      "date": "2025-12-31",
+      "src": "assets/mermaid/20251231_1455_海洋中的美人鱼_remix_01kdsjz3b0ee3stamcy4bwr0bg.png",
+      "thumb": "assets/mermaid/20251231_1455_海洋中的美人鱼_remix_01kdsjz3b0ee3stamcy4bwr0bg.png",
+      "images": [
+        "assets/mermaid/20251231_1455_海洋中的美人鱼_remix_01kdsjz3b0ee3stamcy4bwr0bg.png",
+        "assets/mermaid/20251231_1455_海洋中的美人鱼_remix_01kdsjz3b1fd9ay1cbc50b9av6.png",
+        "assets/mermaid/20251231_1455_海洋中的美人鱼_remix_01kdsjz3b2eastvd6nd4kbvewg.png",
+        "assets/mermaid/20251231_1455_海洋中的美人鱼_remix_01kdsjz3b3e43afgja7n0pp3m5.png"
+      ],
+      "article": "<h3>Concept</h3><p>This series focuses on the classic idea of a siren whose song travels through the water. Flowing poses and sweeping lines are used to imply music and motion without showing any instruments or notes.</p><h3>Atmosphere</h3><p>Mist, suspended particles and subtle glows in the water help create a cinematic mood. Each variation shifts the balance of darkness and light, moving from intimate close-up feeling to a wider, more dramatic stage.</p><h3>Story Hints</h3><p>The images leave space for the viewer to imagine what or who the siren is calling. She can be read as a guardian, a warning or a lure, depending on how one interprets the expression and environment.</p>"
+    },
+    {
+      "id": "sea-warrior-1456",
+      "title": "Blades of the Abyss",
+      "category": "Mermaid",
+      "date": "2025-12-31",
+      "src": "assets/mermaid/20251231_1456_海洋中的女战士_remix_01kdsk1b9mefhav716h2xtqq52.png",
+      "thumb": "assets/mermaid/20251231_1456_海洋中的女战士_remix_01kdsk1b9mefhav716h2xtqq52.png",
+      "images": [
+        "assets/mermaid/20251231_1456_海洋中的女战士_remix_01kdsk1b9mefhav716h2xtqq52.png",
+        "assets/mermaid/20251231_1456_海洋中的女战士_remix_01kdsk1b9nfg1b5ey8bn3awmn9.png",
+        "assets/mermaid/20251231_1456_海洋中的女战士_remix_01kdsk1b9ped6sxd5ffwfew2n3.png",
+        "assets/mermaid/20251231_1456_海洋中的女战士_remix_01kdsk1b9qftg99qr3rny8q1r8.png"
+      ],
+      "article": "<h3>Concept</h3><p>Here the mermaid is rendered as a close combat fighter. Armor plates, sharpened fins and weapon-like silhouettes turn the character into a symbol of controlled danger.</p><h3>Action and Posing</h3><p>Across the variations the pose shifts from poised stillness to more aggressive motion. The compositions are cropped tightly to keep the viewer close to the action, emphasizing the weight of armor and the flow of water around it.</p><h3>Emotion</h3><p>Rather than pure rage, the intended expression is disciplined focus. The warrior is fully aware of her surroundings, moving with purpose in an environment where even a small mistake can be fatal.</p>"
+    },
+    {
+      "id": "luminous-mermaid-1457",
+      "title": "Luminous Tide",
+      "category": "Mermaid",
+      "date": "2025-12-31",
+      "src": "assets/mermaid/20251231_1457_海洋中的美人鱼_remix_01kdsk31c9e4gtpr6k05t5jnsk.png",
+      "thumb": "assets/mermaid/20251231_1457_海洋中的美人鱼_remix_01kdsk31c9e4gtpr6k05t5jnsk.png",
+      "images": [
+        "assets/mermaid/20251231_1457_海洋中的美人鱼_remix_01kdsk31c9e4gtpr6k05t5jnsk.png",
+        "assets/mermaid/20251231_1457_海洋中的美人鱼_remix_01kdsk31cae359hz2mw5vh9rr6.png",
+        "assets/mermaid/20251231_1457_海洋中的美人鱼_remix_01kdsk31cbexks41eqszd11yvy.png",
+        "assets/mermaid/20251231_1457_海洋中的美人鱼_remix_01kdsk31ccek9t0m3w8p1ffqpe.png"
+      ],
+      "article": "<h3>Concept</h3><p>This set explores a mermaid illuminated by glowing water and reflections from the surface. The goal is to create a painterly glow that feels soft but still rich in detail.</p><h3>Light Play</h3><p>Subtle rim light around the silhouette and shimmering highlights on hair and scales are used to outline the character against darker backgrounds. Each image tries a slightly different balance between cool and warm tones.</p><h3>Feeling</h3><p>The resulting mood is hopeful rather than ominous. Even though the ocean is deep and vast, the light suggests that this part of the sea is a place of wonder.</p>"
+    },
+    {
+      "id": "open-sea-mermaid-1500",
+      "title": "Pearl of the Open Sea",
+      "category": "Mermaid",
+      "date": "2025-12-31",
+      "src": "assets/mermaid/20251231_1500_海洋美人鱼_remix_01kdsk9fzwe7xbqy5pvrz61h1b.png",
+      "thumb": "assets/mermaid/20251231_1500_海洋美人鱼_remix_01kdsk9fzwe7xbqy5pvrz61h1b.png",
+      "images": [
+        "assets/mermaid/20251231_1500_海洋美人鱼_remix_01kdsk9fzwe7xbqy5pvrz61h1b.png",
+        "assets/mermaid/20251231_1500_海洋美人鱼_remix_01kdsk9fzyft7rc28baf1svqra.png"
+      ],
+      "article": "<h3>Concept</h3><p>This smaller collection places the mermaid in a more open, less crowded part of the sea. With fewer background elements, the focus stays almost entirely on the pose and silhouette.</p><h3>Composition</h3><p>The framing and negative space are used to make the character feel like a single bright point in a vast expanse of water. The two variations test slightly different balances between the horizon, the body and the surrounding waves.</p><h3>Interpretation</h3><p>The piece can be read as a quiet moment of freedom, with the mermaid rising toward the light far away from any city or battlefield.</p>"
+    },
+    {
+      "id": "hollywood-mermaid-2339",
+      "title": "Hollywood Siren",
+      "category": "Mermaid",
+      "date": "2026-01-04",
+      "src": "assets/mermaid/20260104_2339_好莱坞风格美人鱼_remix_01ke4tgy5me8mvkg6a6jjqdva9.png",
+      "thumb": "assets/mermaid/20260104_2339_好莱坞风格美人鱼_remix_01ke4tgy5me8mvkg6a6jjqdva9.png",
+      "images": [
+        "assets/mermaid/20260104_2339_好莱坞风格美人鱼_remix_01ke4tgy5me8mvkg6a6jjqdva9.png",
+        "assets/mermaid/20260104_2339_好莱坞风格美人鱼_remix_01ke4tgy5newbvzwekrtpc840k.png",
+        "assets/mermaid/20260104_2339_好莱坞风格美人鱼_remix_01ke4tgy5pfbptgj2scx96wkk3.png",
+        "assets/mermaid/20260104_2339_好莱坞风格美人鱼_remix_01ke4tgy5qf2cagtawc736v18w.png"
+      ],
+      "article": "<h3>Concept</h3><p>These images reinterpret the mermaid through the lens of modern blockbuster cinema. Dramatic lighting, bold color contrast and glamorous styling give the character a red carpet presence even under water.</p><h3>Cinematic Taste</h3><p>The compositions borrow from movie posters, with strong diagonals, spotlight effects and carefully staged poses. Each variation experiments with how far the design can lean toward high fashion while still feeling like a creature of the sea.</p><h3>Style Fusion</h3><p>The result is a fusion of mythology and Hollywood aesthetics, suggesting a mermaid who could lead her own fantasy film.</p>"
+    },
+    {
+      "id": "hollywood-battle-2343",
+      "title": "Hollywood Battle in the Abyss",
+      "category": "Mermaid",
+      "date": "2026-01-04",
+      "src": "assets/mermaid/20260104_2343_好莱坞风格战斗_remix_01ke4trrxdfxxata1frsfk430s.png",
+      "thumb": "assets/mermaid/20260104_2343_好莱坞风格战斗_remix_01ke4trrxdfxxata1frsfk430s.png",
+      "images": [
+        "assets/mermaid/20260104_2343_好莱坞风格战斗_remix_01ke4trrxdfxxata1frsfk430s.png",
+        "assets/mermaid/20260104_2343_好莱坞风格战斗_remix_01ke4trrxef4daabfnb8xjtbch.png"
+      ],
+      "article": "<h3>Concept</h3><p>This collection shifts the focus from character glamor to large scale conflict. The mermaid is staged in the middle of a cinematic battle scene with powerful motion and exploding light.</p><h3>Action Framing</h3><p>Dynamic angles, blurred motion and strong directional lighting are used to create a sense of impact. The two variations explore different moments within the same imagined fight, almost like frames taken from a movie sequence.</p><h3>Energy</h3><p>The emphasis is on intensity and spectacle, showing how the same ocean world can transform from calm myth to high energy action.</p>"
+    },
+    {
+      "id": "sora-mermaid-dreams-2026",
+      "title": "Dream Fragments of the Sea",
+      "category": "Mermaid",
+      "date": "2026-01-05",
+      "src": "assets/mermaid/sora_image_2026-01-05T03-19-43_1767583183167.png",
+      "thumb": "assets/mermaid/sora_image_2026-01-05T03-19-43_1767583183167.png",
+      "images": [
+        "assets/mermaid/sora_image_2026-01-05T03-19-43_1767583183167.png",
+        "assets/mermaid/sora_image_2026-01-05T03-19-50_1767583189828.png"
+      ],
+      "article": "<h3>Concept</h3><p>This pair of images feels like fragments from a dream about the sea. Details are slightly abstracted, inviting the viewer to read their own story into the shapes and colors.</p><h3>Experimentation</h3><p>The focus here is on mood rather than strict realism. The work plays with looser rendering, softer edges and more experimental compositions to see how far the idea of a mermaid can be pushed while still remaining recognizable.</p><h3>Purpose</h3><p>These pieces act as a sketchbook for future, more polished works, capturing ideas that might later grow into full series of their own.</p>"
     }
   ]
 }
