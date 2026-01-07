@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Icon: Abstract Pen/Brush Tip -->
+  <path d="M40,80 C30,80 20,70 20,50 C20,20 50,10 50,10 C50,10 80,20 80,50 C80,70 70,80 60,80 L50,95 L40,80 Z" 
+        fill="url(#logoGradient)" filter="url(#glow)" />
+  <circle cx="50" cy="40" r="10" fill="#1a1a1a" opacity="0.3" />
+  
+  <!-- Text: Drawing Gallery -->
+  <text x="100" y="65" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="48" fill="#ffffff" letter-spacing="2">
+    DRAWING
+  </text>
+  <circle cx="360" cy="65" r="5" fill="#4facfe" />
+</svg>
