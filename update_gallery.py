@@ -30,6 +30,49 @@ def ymd_to_iso(ymd: str) -> str:
 
 
 REPLACEMENTS: list[tuple[str, str]] = [
+    ("银发蓝眼仙女", "Silver-Haired Blue-Eyed Fairy"),
+    ("银发蓝眼男子", "Silver-Haired Blue-Eyed Man"),
+    ("白发蓝眼战士", "White-Haired Blue-Eyed Warrior"),
+    ("白发蓝眼动作", "White-Haired Blue-Eyed Action"),
+    ("好莱坞白发蓝眼", "Hollywood White Hair, Blue Eyes"),
+    ("银发精灵召唤仪式", "Silver-Haired Elf Summoning Ritual"),
+    ("龙与决斗者", "Dragon and Duelist"),
+    ("闪电中的骑士", "Knight in Lightning"),
+    ("骑士与巨龙", "Knight and Great Dragon"),
+    ("三头龙与闪电", "Three-Headed Dragon and Lightning"),
+    ("闪电中的三头龙", "Three-Headed Dragon in Lightning"),
+    ("闪电背景巨龙", "Dragon in Lightning Backdrop"),
+    ("巨龙护卫少女", "Great Dragon Protecting a Girl"),
+    ("银龙闪电背景", "Silver Dragon with Lightning Backdrop"),
+    ("银龙星空咆哮", "Silver Dragon Roaring Under Stars"),
+    ("银甲龙咆哮", "Armored Silver Dragon Roar"),
+    ("银色龙之守护", "Silver Dragon Guardian"),
+    ("银色巨龙降临", "Arrival of the Silver Great Dragon"),
+    ("好莱坞龙之怒", "Hollywood Dragon's Wrath"),
+    ("好莱坞龙之觉醒", "Hollywood Dragon Awakening"),
+    ("好莱坞龙之崛起", "Hollywood Dragon Rising"),
+    ("好莱坞龙之威", "Hollywood Dragon's Might"),
+    ("好莱坞龙之霸气", "Hollywood Dragon Dominance"),
+    ("好莱坞金属龙", "Hollywood Metal Dragon"),
+    ("好莱坞金属飞龙", "Hollywood Metal Wyvern"),
+    ("好莱坞梦幻巨龙", "Hollywood Dreamlike Great Dragon"),
+    ("好莱坞科幻飞龙", "Hollywood Sci-Fi Wyvern"),
+    ("好莱坞科幻巨龙", "Hollywood Sci-Fi Great Dragon"),
+    ("好莱坞科幻场景", "Hollywood Sci-Fi Scene"),
+    ("好莱坞星空洞穴", "Hollywood Starry Cave"),
+    ("好莱坞拍摄场景", "Hollywood Live-Action Set"),
+    ("好莱坞风格重现", "Hollywood Style Reenactment"),
+    ("好莱坞风格拍摄", "Hollywood Style Shooting"),
+    ("好莱坞风格银龙", "Hollywood Style Silver Dragon"),
+    ("好莱坞风格幻想龙", "Hollywood Style Fantasy Dragon"),
+    ("好莱坞风格巨龙", "Hollywood Style Great Dragon"),
+    ("好莱坞风格龙形", "Hollywood Style Dragon Form"),
+    ("好莱坞风格龙", "Hollywood Style Dragon"),
+    ("好莱坞质感龙角色", "Hollywood Dragon Character Study"),
+    ("好莱坞奇幻龙", "Hollywood Fantasy Dragon"),
+    ("好莱坞奇幻生物", "Hollywood Fantasy Creature"),
+    ("好莱坞场景重构", "Hollywood Scene Rebuild"),
+    ("好莱坞风石碑", "Hollywood Stone Monolith"),
     ("好莱坞式真实再现", "Hollywood Realistic Reenactment"),
     ("好莱坞式真实场景", "Hollywood Real-World Scene"),
     ("好莱坞真实拍摄", "Hollywood Live-Action Shot"),
@@ -55,6 +98,41 @@ REPLACEMENTS: list[tuple[str, str]] = [
 ]
 
 TOKENS: list[tuple[str, str]] = [
+    ("银发蓝眼", "Silver-Haired Blue-Eyed"),
+    ("白发蓝眼", "White-Haired Blue-Eyed"),
+    ("蓝眼", "Blue-Eyed"),
+    ("银发", "Silver-Haired"),
+    ("白发", "White-Haired"),
+    ("精灵", "Elf"),
+    ("仙女", "Fairy"),
+    ("男子", "Man"),
+    ("少女", "Girl"),
+    ("骑士", "Knight"),
+    ("决斗者", "Duelist"),
+    ("三头龙", "Three-Headed Dragon"),
+    ("银龙", "Silver Dragon"),
+    ("银色", "Silver"),
+    ("银甲", "Silver Armored"),
+    ("金属", "Metal"),
+    ("闪电", "Lightning"),
+    ("喷火", "Fire Breath"),
+    ("咆哮", "Roar"),
+    ("守护", "Guardian"),
+    ("降临", "Arrival"),
+    ("觉醒", "Awakening"),
+    ("崛起", "Rise"),
+    ("之怒", "Wrath"),
+    ("之威", "Might"),
+    ("霸气", "Dominance"),
+    ("星空", "Starry"),
+    ("洞穴", "Cave"),
+    ("石碑", "Monolith"),
+    ("黄金之梦", "Golden Dream"),
+    ("梦幻", "Dreamlike"),
+    ("重构", "Rebuild"),
+    ("科幻", "Sci-Fi"),
+    ("飞龙", "Wyvern"),
+    ("巨龙", "Great Dragon"),
     ("亚洲女战士", "Asian Female Warrior"),
     ("女战士", "Female Warrior"),
     ("好莱坞风格", "Hollywood Style"),
@@ -99,7 +177,15 @@ TOKENS: list[tuple[str, str]] = [
 
 def title_case(s: str) -> str:
     parts = [p for p in re.split(r"\s+", s.strip()) if p]
-    return " ".join([p[:1].upper() + p[1:].lower() for p in parts])
+    words: list[str] = []
+    last = ""
+    for p in parts:
+        w = p[:1].upper() + p[1:].lower()
+        if last and w.lower() == last.lower():
+            continue
+        words.append(w)
+        last = w
+    return " ".join(words)
 
 
 def english_title_from_prompt(prompt: str, hm: str) -> str:
