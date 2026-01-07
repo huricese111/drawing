@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
         lightboxTitle: document.getElementById("lightboxTitle"),
         lightboxCategory: document.getElementById("lightboxCategory"),
         lightboxDate: document.getElementById("lightboxDate"),
-        lightboxDescription: document.getElementById("lightboxDescription"),
+        lightboxDescription: document.getElementById("lightboxArticle"), // Updated ID
+        commentsSection: document.getElementById("commentsSection"), // Comments
         closeBtn: document.getElementById("closeLightbox"),
         prevBtn: document.getElementById("prevBtn"),
         nextBtn: document.getElementById("nextBtn"),
@@ -177,13 +178,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Lightbox Functions
+    // --- Comment System (Utterances) ---
+    function loadComments(item) {
+        const container = elements.commentsSection;
+        container.innerHTML = ''; // Clear existing comments
+
+        const script = document.createElement('script');
+        script.src = 'https://utteranc.es/client.js';
+        script.setAttribute('repo', 'huricese111/drawing'); // Your GitHub Repo
+        script.setAttribute('issue-term', item.id); // Map comments to the item ID
+        script.setAttribute('theme', 'github-dark');
+        script.setAttribute('crossorigin', 'anonymous');
+        script.async = true;
+
+        container.appendChild(script);
+    }
+
+    // --- Lightbox Functions ---
     function openLightbox(index) {
         state.lightboxIndex = index;
-        state.subImageIndex = 0; // Reset sub-index
+        state.subImageIndex = 0; // Reset sub-index when opening new item
         updateLightboxContent();
         elements.lightbox.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
@@ -207,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const item = state.visibleItems[state.lightboxIndex];
         if (item.images && item.images.length > 1) {
             state.subImageIndex = (state.subImageIndex + 1) % item.images.length;
-            updateLightboxContent();
+            updateLightboxContent(true); // Skip reloading comments
         }
     }
 
@@ -215,11 +232,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const item = state.visibleItems[state.lightboxIndex];
         if (item.images && item.images.length > 1) {
             state.subImageIndex = (state.subImageIndex - 1 + item.images.length) % item.images.length;
-            updateLightboxContent();
+            updateLightboxContent(true); // Skip reloading comments
         }
     }
 
-    function updateLightboxContent() {
+    function updateLightboxContent(skipComments = false) {
         const item = state.visibleItems[state.lightboxIndex];
         
         // Determine which image to show
@@ -246,6 +263,20 @@ document.addEventListener("DOMContentLoaded", () => {
             elements.lightboxDescription.innerHTML = '<p>No description available for this artwork.</p>';
         }
 
+        // Load Comments (Only if switching main items, not sub-images)
+        // Check if we need to reload comments (simple check: if called from showNextSubImage, we might want to skip)
+        // But since we don't have a robust way to know 'why' we updated, we'll check if the ID changed in the comment section?
+        // Actually, easiest is to pass a flag or check against current state.
+        
+        // Better approach: Check if the comment section already has the correct term? 
+        // Utterances doesn't expose this easily.
+        // Let's just reload it if 'skipComments' is false.
+        // We will pass skipComments = true when navigating sub-images.
+
+        if (!skipComments) {
+            loadComments(item);
+        }
+
         // Handle Sub-navigation UI
         if (hasMultipleImages) {
             elements.prevSubBtn.classList.remove('hidden');
@@ -262,7 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ind.addEventListener('click', (e) => {
                     e.stopPropagation();
                     state.subImageIndex = parseInt(ind.dataset.index);
-                    updateLightboxContent();
+                    updateLightboxContent(true); // Skip reloading comments
                 });
             });
 

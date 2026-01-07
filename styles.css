@@ -469,6 +469,18 @@ body {
     color: #cbd5e1;
 }
 
+/* Comments Section */
+.comments-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+}
+
+.utterances {
+    max-width: 100% !important;
+}
+
 .article-content h3 {
     font-family: var(--font-heading);
     color: var(--text-primary);
